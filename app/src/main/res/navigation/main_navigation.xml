@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/toDoPageFragment">
+
+    <fragment
+        android:id="@+id/toDoPageFragment"
+        android:name="com.ozcanfatihcan.todosapp.ui.fragment.ToDoPageFragment"
+        android:label="ToDoPageFragment" >
+        <action
+            android:id="@+id/gotoAddFragment"
+            app:destination="@id/addPageFragment" />
+        <action
+            android:id="@+id/gotoDetailFragment"
+            app:destination="@id/detailPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPageFragment"
+        android:name="com.ozcanfatihcan.todosapp.ui.fragment.AddPageFragment"
+        android:label="fragment_add_page"
+        tools:layout="@layout/fragment_add_page" />
+    <fragment
+        android:id="@+id/detailPageFragment"
+        android:name="com.ozcanfatihcan.todosapp.ui.fragment.DetailPageFragment"
+        android:label="fragment_detail_page"
+        tools:layout="@layout/fragment_detail_page" />
+    <fragment
+        android:id="@+id/completedPageFragment"
+        android:name="com.ozcanfatihcan.todosapp.ui.fragment.CompletedPageFragment"
+        android:label="fragment_completed_page"
+        tools:layout="@layout/fragment_completed_page" />
+</navigation>
