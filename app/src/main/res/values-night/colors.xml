@@ -7,8 +7,8 @@
     <color name="darkBlue">#FF023059</color>
     <color name="projectBlue">#FF166B8C</color>
     <color name="lightBlue">#FF379BA6</color>
-    <color name="toolBar">#FF166B8C</color>
-    <color name="backgroundColor">#FFFFFF</color>
-    <color name="bottomBarColor">#FFFFFF</color>
-    <color name="bottomBarIconColor">#FF000000</color>
+    <color name="toolBar">#FF023059</color>
+    <color name="backgroundColor">#5C6873</color>
+    <color name="bottomBarColor">#5C6873</color>
+    <color name="bottomBarIconColor">#FFFFFFFF</color>
 </resources>

@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ToDosApp</string>
+    <string name="toDo">ToDo</string>
+    <string name="completed">Completed</string>
+    <string name="detailPage">Detail</string>
+    <string name="addPage">Add To-Do</string>
+    <string name="toDoName">ToDo Name</string>
+    <string name="toDoDetail">ToDo Detail</string>
+    <string name="toDoTime">ToDo Time</string>
+    <string name="buttonUpdate">Update</string>
+    <string name="buttonAdd">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

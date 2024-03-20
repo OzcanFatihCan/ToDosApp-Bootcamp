@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Yapılacaklar Uygulaması</string>
+    <string name="toDo">Yapılacaklar</string>
+    <string name="completed">Tamamlananlar</string>
+    <string name="detailPage">Detaylar</string>
+    <string name="addPage">Yapılacak Ekle</string>
+    <string name="toDoName">Yapılacak İsmi</string>
+    <string name="toDoDetail">Yapılacak Detayı</string>
+    <string name="toDoTime">Yapılacak Zamanı</string>
+    <string name="buttonUpdate">Güncelle</string>
+    <string name="buttonAdd">Ekle</string>
+</resources>
