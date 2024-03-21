@@ -27,12 +27,12 @@ class ToDoPageFragment : Fragment() {
 
         binding.todoSearch.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let { viewModel.search(it) }
+                newText?.let { viewModel.searchTodo(it) }
                 return true
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { viewModel.search(it) }
+                query?.let { viewModel.searchTodo(it) }
                 return true
             }
         })

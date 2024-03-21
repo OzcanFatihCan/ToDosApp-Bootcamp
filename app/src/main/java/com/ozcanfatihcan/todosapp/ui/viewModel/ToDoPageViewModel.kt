@@ -29,10 +29,10 @@ class ToDoPageViewModel:ViewModel() {
         }
     }
 
-    fun search(searchWord:String){
+    fun searchTodo(searchWord:String){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-             //  todoList.value=todoRepository.search(searchWord)
+             //  todoList.value=todoRepository.searchTodo(searchWord)
             }catch (e:Exception){ }
         }
     }
