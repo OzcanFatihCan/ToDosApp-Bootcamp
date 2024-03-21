@@ -11,7 +11,9 @@ import androidx.fragment.app.viewModels
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentCompletedPageBinding
 import com.ozcanfatihcan.todosapp.ui.viewModel.CompletedPageViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CompletedPageFragment : Fragment() {
     private lateinit var binding: FragmentCompletedPageBinding
     private lateinit var viewModel:CompletedPageViewModel

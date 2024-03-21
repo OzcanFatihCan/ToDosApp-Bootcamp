@@ -14,7 +14,9 @@ import com.ozcanfatihcan.todosapp.databinding.FragmentToDoPageBinding
 import com.ozcanfatihcan.todosapp.ui.adapter.TaskAdapter
 import com.ozcanfatihcan.todosapp.ui.viewModel.ToDoPageViewModel
 import com.ozcanfatihcan.todosapp.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ToDoPageFragment : Fragment() {
     private lateinit var binding: FragmentToDoPageBinding
     private lateinit var viewModel:ToDoPageViewModel

@@ -3,11 +3,15 @@ package com.ozcanfatihcan.todosapp.ui.viewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ozcanfatihcan.todosapp.data.entity.Todos
+import com.ozcanfatihcan.todosapp.data.repo.CompletedRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CompletedPageViewModel:ViewModel() {
+@HiltViewModel
+class CompletedPageViewModel @Inject constructor(var completedRepository: CompletedRepository):ViewModel() {
 
     val completedList= MutableLiveData<List<Todos>>()
 

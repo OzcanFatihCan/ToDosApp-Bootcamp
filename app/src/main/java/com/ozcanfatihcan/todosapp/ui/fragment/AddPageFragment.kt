@@ -12,7 +12,9 @@ import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentAddPageBinding
 import com.ozcanfatihcan.todosapp.ui.viewModel.AddPageViewModel
 import com.ozcanfatihcan.todosapp.util.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddPageFragment : Fragment() {
     private lateinit var binding:FragmentAddPageBinding
     private lateinit var viewModel:AddPageViewModel
