@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentToDoPageBinding
+import com.ozcanfatihcan.todosapp.util.gecisYap
 
 class ToDoPageFragment : Fragment() {
     private lateinit var binding: FragmentToDoPageBinding
@@ -30,12 +32,13 @@ class ToDoPageFragment : Fragment() {
                 return true
             }
         })
-
-
         return binding.root
     }
-
     override fun onResume() {
         super.onResume()
+    }
+
+    fun todoAdd(it: View){
+        Navigation.gecisYap(it,R.id.addPageFragment)
     }
 }
