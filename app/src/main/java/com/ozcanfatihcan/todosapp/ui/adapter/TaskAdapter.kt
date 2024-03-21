@@ -9,9 +9,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.data.entity.Todos
 import com.ozcanfatihcan.todosapp.databinding.TodoTaskCardDesignBinding
+import com.ozcanfatihcan.todosapp.ui.viewModel.ToDoPageViewModel
 
 class TaskAdapter(var mContext: Context,
-                  var todosList:List<Todos>)
+                  var todosList:List<Todos>,
+                  var viewModel:ToDoPageViewModel)
                   :RecyclerView.Adapter<TaskAdapter.CardDesignHolder>() {
     inner class CardDesignHolder(var design:TodoTaskCardDesignBinding):RecyclerView.ViewHolder(design.root){}
 
@@ -33,7 +35,7 @@ class TaskAdapter(var mContext: Context,
         d.buttonDelete.setOnClickListener {
             Snackbar.make(it,"${todoObje.todo_name} görevi silinsin mi?", Snackbar.LENGTH_SHORT)
                 .setAction("EVET"){
-                    //viewModel.sil(kisi.kisi_id)
+                    viewModel.deleteTodo(todoObje.todo_id)
                 }
                 .show()
         }

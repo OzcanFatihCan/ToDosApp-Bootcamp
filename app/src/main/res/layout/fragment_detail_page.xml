@@ -7,6 +7,9 @@
         <variable
             name="todoDetailPage"
             type="com.ozcanfatihcan.todosapp.ui.fragment.DetailPageFragment" />
+        <variable
+            name="todoObject"
+            type="com.ozcanfatihcan.todosapp.data.entity.Todos" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -126,6 +129,7 @@
             android:textColor="@color/backgroundColor"
             android:textSize="20dp"
             android:textStyle="bold"
+            android:onClick="@{()->todoDetailPage.buttonUpdate(todoObject.todo_id,textTodoNameD.getText().toString(),textTodoDetailD.getText().toString(),textTodoTimeD.getText().toString())}"
             app:backgroundTint="@color/toolBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
