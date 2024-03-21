@@ -9,4 +9,5 @@
     <string name="toDoTime">Yapılacak Zamanı</string>
     <string name="buttonUpdate">Güncelle</string>
     <string name="buttonAdd">Ekle</string>
+    <string name="search">Ara</string>
 </resources>
