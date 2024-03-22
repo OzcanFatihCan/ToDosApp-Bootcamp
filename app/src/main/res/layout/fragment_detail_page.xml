@@ -56,6 +56,7 @@
                 android:id="@+id/textTodoNameD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{todoObject.todo_name}"
                 android:hint="@string/toDoName"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -85,6 +86,7 @@
                 android:id="@+id/textTodoDetailD"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:text="@{todoObject.todo_detail}"
                 android:hint="@string/toDoDetail"
                 android:inputType="textMultiLine"
                 android:maxLines="5"
@@ -115,6 +117,7 @@
                 android:id="@+id/textTodoTimeD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{todoObject.todo_time}"
                 android:hint="@string/toDoTime"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -128,7 +131,7 @@
             android:onClick="@{()->todoDetailPage.buttonUpdate(todoObject.todo_id,textTodoNameD.getText().toString(),textTodoDetailD.getText().toString(),textTodoTimeD.getText().toString())}"
             android:text="@string/buttonUpdate"
             android:textColor="@color/backgroundColor"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="@color/toolBar"
             app:layout_constraintEnd_toEndOf="parent"

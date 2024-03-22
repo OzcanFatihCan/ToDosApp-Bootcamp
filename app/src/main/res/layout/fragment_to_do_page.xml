@@ -26,11 +26,25 @@
             android:background="@color/toolBar"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:title="@string/toDo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@string/toDo" >
+
+            <ImageView
+                android:id="@+id/completedButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_gravity="right"
+                android:layout_margin="8dp"
+                android:onClick="@{()-> todoPageFragment.goToCompleted(completedButton)}"
+                app:srcCompat="@drawable/completed_list_icon"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="219dp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/todoRecyclerView"
@@ -73,6 +87,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/add_icon" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -41,7 +41,7 @@ class ToDoPageViewModel @Inject constructor(var todoRepository: TodoRepository):
     fun searchTodo(searchWord:String){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-             //  todoList.value=todoRepository.searchTodo(searchWord)
+                todoList.value=todoRepository.searchTodo(searchWord)
             }catch (e:Exception){ }
         }
     }

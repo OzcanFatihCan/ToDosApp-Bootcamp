@@ -15,6 +15,9 @@
         <action
             android:id="@+id/gotoDetailFragment"
             app:destination="@id/detailPageFragment" />
+        <action
+            android:id="@+id/gotoCompletedFragment"
+            app:destination="@id/completedPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/addPageFragment"

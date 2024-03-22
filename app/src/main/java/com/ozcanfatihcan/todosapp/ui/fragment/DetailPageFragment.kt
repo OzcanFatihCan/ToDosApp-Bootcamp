@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentDetailPageBinding
 import com.ozcanfatihcan.todosapp.ui.viewModel.DetailPageViewModel
@@ -22,6 +23,9 @@ class DetailPageFragment : Fragment() {
     ): View? {
         binding=DataBindingUtil.inflate(inflater,R.layout.fragment_detail_page,container,false)
         binding.todoDetailPage=this
+        val bundle:DetailPageFragmentArgs by navArgs()
+        binding.todoObject=bundle.todoModel
+
         return binding.root
     }
 

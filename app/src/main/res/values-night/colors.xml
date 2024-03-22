@@ -9,6 +9,6 @@
     <color name="lightBlue">#FF379BA6</color>
     <color name="toolBar">#FF023059</color>
     <color name="backgroundColor">#5C6873</color>
-    <color name="bottomBarColor">#5C6873</color>
+    <color name="bottomBarColor">#FF023059</color>
     <color name="bottomBarIconColor">#FFFFFFFF</color>
 </resources>

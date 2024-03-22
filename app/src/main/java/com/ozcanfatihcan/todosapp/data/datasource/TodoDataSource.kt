@@ -13,11 +13,13 @@ class TodoDataSource(var tDao:TodosDao, var cDao:CompletedDao) {
         tDao.saveTodo(newTodo)
     }
     suspend fun updateTodo(todo_id:Int,todo_name:String,todo_detail:String,todo_time:String){
-        //tDao.updateTodo(todo_id,todo_name,todo_detail,todo_time)
+        val newTodo=Todos(todo_id,todo_name,todo_detail,todo_time)
+        tDao.updateTodo(newTodo)
     }
 
     suspend fun deleteTodo(todo_id:Int){
-       // tDao.sil(todo_id)
+        val newTodo=Todos(todo_id,"","","")
+        tDao.deleteTodo(newTodo)
     }
 
 
@@ -29,17 +31,17 @@ class TodoDataSource(var tDao:TodosDao, var cDao:CompletedDao) {
         withContext(Dispatchers.IO){
             return@withContext cDao.getCompleted()
         }
-    /*
+
     suspend fun searchTodo(searchWord:String):List<Todos> =
         withContext(Dispatchers.IO){
             return@withContext tDao.searchTodo(searchWord)
         }
 
+    /*
+        suspend fun searchCompleted(searchWord:String):List<Completed> =
+            withContext(Dispatchers.IO){
+                return@withContext cDao.searchCompleted(searchWord)
+            }
 
-    suspend fun searchCompleted(searchWord:String):List<Completed> =
-        withContext(Dispatchers.IO){
-            return@withContext cDao.searchCompleted(searchWord)
-        }
-
-    */
+        */
 }

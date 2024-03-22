@@ -25,9 +25,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         getWindow().setStatusBarColor(getResources().getColor(R.color.toolBar))
-
-        val navHostFragment=supportFragmentManager.findFragmentById(R.id.mainNavHostFragment) as NavHostFragment
-        NavigationUI.setupWithNavController(binding.bottomNavigationView,navHostFragment.navController)
     }
 
 }

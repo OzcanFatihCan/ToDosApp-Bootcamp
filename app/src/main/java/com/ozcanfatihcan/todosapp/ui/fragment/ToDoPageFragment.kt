@@ -66,4 +66,7 @@ class ToDoPageFragment : Fragment() {
     fun todoAdd(it: View){
         Navigation.gecisYap(it,R.id.addPageFragment)
     }
+    fun goToCompleted(it:View){
+        Navigation.gecisYap(it,R.id.completedPageFragment)
+    }
 }
