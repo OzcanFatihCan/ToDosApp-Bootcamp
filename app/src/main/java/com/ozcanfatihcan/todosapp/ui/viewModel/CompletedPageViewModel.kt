@@ -2,7 +2,7 @@ package com.ozcanfatihcan.todosapp.ui.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ozcanfatihcan.todosapp.data.entity.Todos
+import com.ozcanfatihcan.todosapp.data.entity.Completed
 import com.ozcanfatihcan.todosapp.data.repo.CompletedRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CompletedPageViewModel @Inject constructor(var completedRepository: CompletedRepository):ViewModel() {
 
-    val completedList= MutableLiveData<List<Todos>>()
+    val completedList= MutableLiveData<List<Completed>>()
 
     init {
         getCompleted()

@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.ozcanfatihcan.todosapp.R
+import com.ozcanfatihcan.todosapp.data.entity.Completed
 import com.ozcanfatihcan.todosapp.data.entity.Todos
 import com.ozcanfatihcan.todosapp.databinding.CompleteTaskCardDesignBinding
 
 
 class CompletedAdapter(var mContext: Context,
-                       var completedList:List<Todos>)
+                       var completedList:List<Completed>)
     :RecyclerView.Adapter<CompletedAdapter.CardDesignHolder>() {
 
     inner class CardDesignHolder(var design: CompleteTaskCardDesignBinding): RecyclerView.ViewHolder(design.root){}

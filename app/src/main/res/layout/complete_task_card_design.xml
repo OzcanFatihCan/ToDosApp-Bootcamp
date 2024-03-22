@@ -5,7 +5,7 @@
     <data>
         <variable
             name="completeObject"
-            type="com.ozcanfatihcan.todosapp.data.entity.Todos" />
+            type="com.ozcanfatihcan.todosapp.data.entity.Completed" />
     </data>
 
     <LinearLayout

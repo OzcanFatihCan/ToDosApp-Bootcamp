@@ -1,6 +1,7 @@
 package com.ozcanfatihcan.todosapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,10 @@ import android.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentToDoPageBinding
-import com.ozcanfatihcan.todosapp.ui.adapter.TaskAdapter
+import com.ozcanfatihcan.todosapp.ui.adapter.TodoAdapter
 import com.ozcanfatihcan.todosapp.ui.viewModel.ToDoPageViewModel
 import com.ozcanfatihcan.todosapp.util.gecisYap
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,9 +41,12 @@ class ToDoPageFragment : Fragment() {
             }
         })
 
+
         viewModel.todoList.observe(viewLifecycleOwner){
-            val todoAdapter=TaskAdapter(requireContext(),it,viewModel)
-            binding.taskAdapter=todoAdapter
+            val todoAdapter= TodoAdapter(requireContext(),it,viewModel)
+            Log.d("ToDoPageFragment", "Todo list size: ${it.size}")
+            binding.todoAdapter=todoAdapter
+
         }
 
 

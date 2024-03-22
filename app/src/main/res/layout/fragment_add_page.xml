@@ -124,7 +124,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/buttonAdd"
             android:textColor="@color/backgroundColor"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="@color/toolBar"
             android:onClick="@{()-> todoAddPage.saveTodo(textTodoName.getText().toString(),textTodoDetail.getText().toString(),textTodoTime.getText().toString())}"

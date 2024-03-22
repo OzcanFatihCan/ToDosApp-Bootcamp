@@ -1,9 +1,15 @@
 package com.ozcanfatihcan.todosapp.data.entity
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import org.jetbrains.annotations.NotNull
 import java.io.Serializable
 
-data class Todos(var todo_id:Int,
-                 var todo_name:String,
-                 var todo_detail:String,
-                 var todo_time:String):Serializable {
+@Entity(tableName = "Todos")
+data class Todos(@PrimaryKey(autoGenerate = true)
+                 @ColumnInfo(name="todo_id") @NotNull var todo_id:Int,
+                 @ColumnInfo(name="todo_name") @NotNull var todo_name:String,
+                 @ColumnInfo(name="todo_detail") @NotNull var todo_detail:String,
+                 @ColumnInfo(name="todo_time") @NotNull var todo_time:String):Serializable {
 }

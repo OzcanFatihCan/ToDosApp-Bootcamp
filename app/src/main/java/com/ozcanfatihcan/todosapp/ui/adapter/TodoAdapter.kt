@@ -11,43 +11,31 @@ import com.ozcanfatihcan.todosapp.data.entity.Todos
 import com.ozcanfatihcan.todosapp.databinding.TodoTaskCardDesignBinding
 import com.ozcanfatihcan.todosapp.ui.viewModel.ToDoPageViewModel
 
-class TaskAdapter(var mContext: Context,
-                  var todosList:List<Todos>,
-                  var viewModel:ToDoPageViewModel)
-                  :RecyclerView.Adapter<TaskAdapter.CardDesignHolder>() {
+class TodoAdapter(var mContext:Context,var todoList: List<Todos>,var viewModel: ToDoPageViewModel):RecyclerView.Adapter<TodoAdapter.CardDesignHolder>() {
+
     inner class CardDesignHolder(var design:TodoTaskCardDesignBinding):RecyclerView.ViewHolder(design.root){}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardDesignHolder {
-        val design:TodoTaskCardDesignBinding= DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.todo_task_card_design, parent,false)
+        val design:TodoTaskCardDesignBinding=DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.todo_task_card_design,parent, false)
         return CardDesignHolder(design)
     }
 
     override fun onBindViewHolder(holder: CardDesignHolder, position: Int) {
-        val todoObje=todosList.get(position)
+        val todosVariable=todoList.get(position)
         val d=holder.design
 
-        d.todosObject=todoObje
-
-        d.buttonCheck.setOnClickListener {
-
-        }
+        d.todoObje=todosVariable
 
         d.buttonDelete.setOnClickListener {
-            Snackbar.make(it,"${todoObje.todo_name} görevi silinsin mi?", Snackbar.LENGTH_SHORT)
-                .setAction("EVET"){
-                    viewModel.deleteTodo(todoObje.todo_id)
+            Snackbar.make(it,"${todosVariable.todo_name} silinsin mi?", Snackbar.LENGTH_SHORT)
+                .setAction("evet"){
+                    viewModel.deleteTodo(todosVariable.todo_id)
                 }
                 .show()
         }
-
-        d.toDoCard.setOnClickListener {
-
-        }
-
-
     }
 
     override fun getItemCount(): Int {
-        return todosList.size
+        return todoList.size
     }
 }

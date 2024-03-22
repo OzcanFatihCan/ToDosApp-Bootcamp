@@ -25,7 +25,11 @@
         android:id="@+id/detailPageFragment"
         android:name="com.ozcanfatihcan.todosapp.ui.fragment.DetailPageFragment"
         android:label="fragment_detail_page"
-        tools:layout="@layout/fragment_detail_page" />
+        tools:layout="@layout/fragment_detail_page" >
+        <argument
+            android:name="todoModel"
+            app:argType="com.ozcanfatihcan.todosapp.data.entity.Todos" />
+    </fragment>
     <fragment
         android:id="@+id/completedPageFragment"
         android:name="com.ozcanfatihcan.todosapp.ui.fragment.CompletedPageFragment"

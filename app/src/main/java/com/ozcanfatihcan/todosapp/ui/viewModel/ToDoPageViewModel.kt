@@ -1,5 +1,6 @@
 package com.ozcanfatihcan.todosapp.ui.viewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ozcanfatihcan.todosapp.data.entity.Todos
@@ -28,8 +29,12 @@ class ToDoPageViewModel @Inject constructor(var todoRepository: TodoRepository):
     fun getTodo(){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                //todoList.value=todoRepository.getTodo()
-            }catch (e:Exception){ }
+                val todoItems = todoRepository.getTodo()
+                todoList.value = todoItems
+                Log.d("ToDoPageViewModel", "Toplam ${todoItems.size} görev listelendi.")
+            } catch (e: Exception) {
+                Log.e("ToDoPageViewModel", "Hata: ${e.message}")
+            }
         }
     }
 

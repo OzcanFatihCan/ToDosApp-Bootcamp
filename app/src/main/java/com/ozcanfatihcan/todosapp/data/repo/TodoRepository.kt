@@ -10,7 +10,7 @@ class TodoRepository(var todoDataSource: TodoDataSource) {
 
     suspend fun deleteTodo(todo_id:Int)=todoDataSource.deleteTodo(todo_id)
 
-    //suspend fun getTodo():List<Todos> = todoDataSource.getTodo()
+    suspend fun getTodo():List<Todos> = todoDataSource.getTodo()
 
     //suspend fun searchTodo(searchWord:String):List<Todos> = todoDataSource.searchTodo(searchWord)
 }

@@ -8,8 +8,9 @@
             name="todoPageFragment"
             type="com.ozcanfatihcan.todosapp.ui.fragment.ToDoPageFragment" />
         <variable
-            name="taskAdapter"
-            type="com.ozcanfatihcan.todosapp.ui.adapter.TaskAdapter" />
+            name="todoAdapter"
+            type="com.ozcanfatihcan.todosapp.ui.adapter.TodoAdapter" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,12 +36,14 @@
             android:id="@+id/todoRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:adapter="@{taskAdapter}"
+            android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:adapter="@{todoAdapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todoSearch" />
 
 
         <SearchView

@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="todosObject"
+            name="todoObje"
             type="com.ozcanfatihcan.todosapp.data.entity.Todos" />
     </data>
 
@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="64dp"
-                    android:text="@{todosObject.todo_name}"
+                    android:text='@{todoObje.todo_name != null ? todoObje.todo_name : "Varsayılan Metin"}'
                     android:textColor="@color/lightBlue"
                     android:textSize="24sp"
                     android:textStyle="bold"
