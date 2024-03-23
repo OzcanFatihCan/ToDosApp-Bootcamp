@@ -35,7 +35,7 @@ class CompletedPageViewModel @Inject constructor(var completedRepository: Comple
     fun searchCompleted(searchWord:String){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                //  completedList.value=completedRepository.searchCompleted(searchWord)
+                completedList.value=completedRepository.searchCompleted(searchWord)
             }catch (e:Exception){ }
         }
     }

@@ -130,7 +130,7 @@
             android:layout_marginTop="32dp"
             android:onClick="@{()->todoDetailPage.buttonUpdate(todoObject.todo_id,textTodoNameD.getText().toString(),textTodoDetailD.getText().toString(),textTodoTimeD.getText().toString())}"
             android:text="@string/buttonUpdate"
-            android:textColor="@color/backgroundColor"
+            android:textColor="@color/darkPink"
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="@color/toolBar"

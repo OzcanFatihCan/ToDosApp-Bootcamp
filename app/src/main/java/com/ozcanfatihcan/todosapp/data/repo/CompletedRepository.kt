@@ -9,6 +9,5 @@ class CompletedRepository(var completedDataSource: TodoDataSource) {
     suspend fun saveCompleted(todo_name:String,todo_detail:String,todo_time:String)=completedDataSource.saveCompleted(todo_name,todo_detail,todo_time)
 
     suspend fun deleteCompleted(todo_id:Int)=completedDataSource.deleteCompleted(todo_id)
-
-    //suspend fun searchCompleted(searchWord:String):List<Completed> = completedDataSource.searchCompleted(searchWord)
+    suspend fun searchCompleted(searchWord:String):List<Completed> = completedDataSource.searchCompleted(searchWord)
 }

@@ -17,4 +17,7 @@ interface CompletedDao {
 
     @Delete
     suspend fun deleteCompleted(completed: Completed)
+
+    @Query("SELECT * FROM Completed WHERE todo_name LIKE '%' || :searchWord || '%' ")
+    suspend fun searchCompleted(searchWord:String):List<Completed>
 }

@@ -45,11 +45,10 @@ class TodoDataSource(var tDao:TodosDao, var cDao:CompletedDao) {
         val deleteTodo=Completed(todo_id,"","","")
         cDao.deleteCompleted(deleteTodo)
     }
-    /*
-        suspend fun searchCompleted(searchWord:String):List<Completed> =
-            withContext(Dispatchers.IO){
-                return@withContext cDao.searchCompleted(searchWord)
-            }
+    suspend fun searchCompleted(searchWord:String):List<Completed> =
+        withContext(Dispatchers.IO){
+            return@withContext cDao.searchCompleted(searchWord)
+        }
 
-        */
+
 }
