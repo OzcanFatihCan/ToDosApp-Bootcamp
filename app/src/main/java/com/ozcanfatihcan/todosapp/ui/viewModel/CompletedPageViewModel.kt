@@ -1,5 +1,6 @@
 package com.ozcanfatihcan.todosapp.ui.viewModel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ozcanfatihcan.todosapp.data.entity.Completed
@@ -22,8 +23,12 @@ class CompletedPageViewModel @Inject constructor(var completedRepository: Comple
     fun getCompleted(){
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                //  completedList.value=completeRepository.getCompleted()
-            }catch (e:Exception){ }
+                val completedItems=completedRepository.getCompleted()
+                completedList.value=completedItems
+                Log.d("CompletedPageViewModel", "Toplam ${completedItems.size} görev listelendi.")
+            } catch (e: Exception) {
+                Log.e("CompletedPageViewModel", "Hata: ${e.message}")
+            }
         }
     }
 
@@ -32,6 +37,13 @@ class CompletedPageViewModel @Inject constructor(var completedRepository: Comple
             try {
                 //  completedList.value=completedRepository.searchCompleted(searchWord)
             }catch (e:Exception){ }
+        }
+    }
+
+    fun deleteCompleted(todo_id:Int){
+        CoroutineScope(Dispatchers.Main).launch {
+            completedRepository.deleteCompleted(todo_id)
+            getCompleted()
         }
     }
 }

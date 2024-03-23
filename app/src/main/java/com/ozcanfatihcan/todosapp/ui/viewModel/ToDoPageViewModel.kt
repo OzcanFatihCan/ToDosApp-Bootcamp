@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.ozcanfatihcan.todosapp.data.entity.Todos
+import com.ozcanfatihcan.todosapp.data.repo.CompletedRepository
 import com.ozcanfatihcan.todosapp.data.repo.TodoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -12,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ToDoPageViewModel @Inject constructor(var todoRepository: TodoRepository):ViewModel() {
+class ToDoPageViewModel @Inject constructor(var todoRepository: TodoRepository, var completedRepository: CompletedRepository):ViewModel() {
     val todoList= MutableLiveData<List<Todos>>()
 
     init {
@@ -43,6 +44,12 @@ class ToDoPageViewModel @Inject constructor(var todoRepository: TodoRepository):
             try {
                 todoList.value=todoRepository.searchTodo(searchWord)
             }catch (e:Exception){ }
+        }
+    }
+
+    fun saveCompleted(todo_name:String,todo_detail:String,todo_time:String){
+        CoroutineScope(Dispatchers.Main).launch{
+            completedRepository.saveCompleted(todo_name,todo_detail,todo_time)
         }
     }
 }

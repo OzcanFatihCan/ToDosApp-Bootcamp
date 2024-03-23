@@ -53,7 +53,7 @@
                     android:id="@+id/textTask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="32dp"
                     android:text='@{todoObje.todo_name != null ? todoObje.todo_name : "Varsayılan Metin"}'
                     android:textColor="@color/lightBlue"
                     android:textSize="24sp"

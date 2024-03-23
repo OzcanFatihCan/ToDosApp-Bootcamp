@@ -37,6 +37,15 @@ class TodoAdapter(var mContext:Context,var todoList: List<Todos>,var viewModel: 
                 .show()
         }
 
+        d.buttonCheck.setOnClickListener {
+            Snackbar.make(it,"${todosVariable.todo_name} görev tamamlandı mı?", Snackbar.LENGTH_SHORT)
+                .setAction("EVET"){
+                    viewModel.saveCompleted(todosVariable.todo_name,todosVariable.todo_detail,todosVariable.todo_time)
+                    viewModel.deleteTodo(todosVariable.todo_id)
+                }
+                .show()
+        }
+
         d.toDoCard.setOnClickListener {
             val gecis=ToDoPageFragmentDirections.gotoDetailFragment(todoModel=todosVariable)
             Navigation.gecisYap(it,gecis)

@@ -1,6 +1,7 @@
 package com.ozcanfatihcan.todosapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.ozcanfatihcan.todosapp.R
 import com.ozcanfatihcan.todosapp.databinding.FragmentCompletedPageBinding
+import com.ozcanfatihcan.todosapp.ui.adapter.CompletedAdapter
 import com.ozcanfatihcan.todosapp.ui.viewModel.CompletedPageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CompletedPageFragment : Fragment() {
     private lateinit var binding: FragmentCompletedPageBinding
-    private lateinit var viewModel:CompletedPageViewModel
+    private lateinit var viewModel: CompletedPageViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,6 +37,13 @@ class CompletedPageFragment : Fragment() {
                 return true
             }
         })
+
+        viewModel.completedList.observe(viewLifecycleOwner){
+            val completedAdapter=CompletedAdapter(requireContext(),it,viewModel)
+            Log.d("CompletedPageFragment", "Completed list size: ${it.size}")
+            binding.completedAdapter=completedAdapter
+        }
+
 
         return binding.root
     }

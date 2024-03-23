@@ -18,10 +18,9 @@ class TodoDataSource(var tDao:TodosDao, var cDao:CompletedDao) {
     }
 
     suspend fun deleteTodo(todo_id:Int){
-        val newTodo=Todos(todo_id,"","","")
-        tDao.deleteTodo(newTodo)
+        val deleteTodo=Todos(todo_id,"","","")
+        tDao.deleteTodo(deleteTodo)
     }
-
 
     suspend fun getTodo():List<Todos> =
         withContext(Dispatchers.IO){
@@ -37,6 +36,15 @@ class TodoDataSource(var tDao:TodosDao, var cDao:CompletedDao) {
             return@withContext tDao.searchTodo(searchWord)
         }
 
+    suspend fun saveCompleted(todo_name:String,todo_detail:String,todo_time:String){
+        val newCompleted=Completed(todo_id = 0,todo_name,todo_detail,todo_time)
+        cDao.saveCompleted(newCompleted)
+    }
+
+    suspend fun deleteCompleted(todo_id:Int){
+        val deleteTodo=Completed(todo_id,"","","")
+        cDao.deleteCompleted(deleteTodo)
+    }
     /*
         suspend fun searchCompleted(searchWord:String):List<Completed> =
             withContext(Dispatchers.IO){
